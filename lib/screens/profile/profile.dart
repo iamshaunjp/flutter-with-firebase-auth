@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth_tut/models/app_user.dart';
 import 'package:flutter_auth_tut/services/auth_service.dart';
 import 'package:flutter_auth_tut/shared/styled_button.dart';
 import 'package:flutter_auth_tut/shared/styled_text.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+  const ProfileScreen({super.key, required this.user});
+
+  final AppUser user;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +27,9 @@ class ProfileScreen extends StatelessWidget {
             const StyledHeading('Profile'),
             const SizedBox(height: 16),
 
-            // output user email here later
+            // output user email here later#
+            StyledBodyText('Welcome to your profile, ${user.email}'),
+            const SizedBox(height: 16),
 
             StyledButton(
               onPressed: () {

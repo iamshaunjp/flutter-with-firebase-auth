@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
               if (user == null) {
                 return const WelcomeScreen();
               }
-              return ProfileScreen();
+              return ProfileScreen(user: user);
             }, 
             error: (error, __) => const Text('error loading auth status.'), 
             loading: () => const Text('loading...'),
