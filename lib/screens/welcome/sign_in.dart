@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth_tut/services/auth_service.dart';
 import 'package:flutter_auth_tut/shared/styled_button.dart';
 import 'package:flutter_auth_tut/shared/styled_text.dart';
 
@@ -67,8 +68,9 @@ class _SignInFormState extends State<SignInForm> {
                   final email = _emailController.text.trim();
                   final password = _passwordController.text.trim();
 
-                  print(email);
-                  print(password);
+                  final user = await AuthService.signIn(email, password);
+
+                  // error feedback here later
                 }
               },
               child: const StyledButtonText('Sign In'),
